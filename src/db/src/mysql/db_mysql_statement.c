@@ -423,7 +423,7 @@ int db_mysql_statement_bind_null(db_mysql_statement_t* statement, int index)
         /*
          * Free memory for pointer types
          */
-        api_free(pool, statement->values[index].size, statement->values[index].value_binary);
+        api_free(pool, statement->values[index].size + 1, statement->values[index].value_binary);
         statement->values[index].value_binary = 0;
         statement->values[index].size = 0;
         return DB_OK;
