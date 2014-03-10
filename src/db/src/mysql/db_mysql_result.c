@@ -201,7 +201,7 @@ db_value_t* db_mysql_result_read_row(db_mysql_result_t* result, db_mysql_packet_
          */
         for (i = 0; i < result->num_columns; ++i)
         {
-            row[i].is_null = 1 == (pos[i / 8] & (i % 8));
+            row[i].is_null = 0 != (pos[i / 8] & (i % 8));
         }
 
         /*
