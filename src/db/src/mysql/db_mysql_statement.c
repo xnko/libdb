@@ -164,7 +164,7 @@ int db_mysql_statement_prepare(db_mysql_connection_t* connection, const char* sq
     {
         error = DB_UNKNOWN;
 
-        if ( ! PACKET_IS_ERROR(packet))
+        if (PACKET_IS_ERROR(packet))
         {
             /*
              * Parse error
